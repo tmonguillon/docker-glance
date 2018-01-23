@@ -28,8 +28,10 @@ RUN apk add --no-cache --virtual build-deps \
     && git clone --branch $GLANCE_BRANCH --depth=1 https://github.com/openstack/python-openstackclient \
     && pip install /opt/glance -c /opt/requirements/upper-constraints.txt -r /opt/glance/requirements.txt -r /opt/requirements/requirements.txt \
     && pip install /opt/python-openstackclient -r /opt/python-openstackclient/requirements.txt -r /opt/requirements/requirements.txt \
+    && mkdir -p /etc/glance \
+    && cp /opt/glance/etc/glance-*-paste.ini /etc/glance \
     && rm -rf /root/.cache \
-    && rm -rf /opt/* \
+#    && rm -rf /opt/* \
     && rm -rf /var/cache/apk/* \
     && apk del build-deps
 EXPOSE 9191 9292
