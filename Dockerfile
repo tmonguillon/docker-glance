@@ -22,7 +22,7 @@ RUN apk add --no-cache --virtual build-deps \
         libxml2-dev \
         libxslt-dev \
         mariadb-dev \
-    && pip install uwsgi MySQL-python pymysql pymysql_sa \
+    && pip install MySQL-python pymysql pymysql_sa \
     && git clone --branch $GLANCE_BRANCH --depth=1 https://github.com/openstack/requirements \
     && git clone --branch $GLANCE_BRANCH --depth=1 https://github.com/openstack/glance \
     && git clone --branch $GLANCE_BRANCH --depth=1 https://github.com/openstack/python-openstackclient \
