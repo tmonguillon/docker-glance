@@ -43,5 +43,5 @@ COPY glance-registry.conf /etc/glance/glance-registry.conf
 # add bootstrap script and make it executable
 COPY bootstrap.sh /etc/bootstrap.sh
 RUN chown root.root /etc/bootstrap.sh && chmod a+x /etc/bootstrap.sh
-#ENTRYPOINT ["/etc/bootstrap.sh"]
-CMD ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["/etc/bootstrap.sh"]
+#CMD ["tail", "-f", "/dev/null"]

@@ -74,7 +74,8 @@ export OS_PASSWORD=$OS_PASSWORD
 export OS_AUTH_URL=$OS_AUTH_URL
 EOF
 
-# start glance service
-#glance-registry &
-#sleep 5
-#glance-api
+# Start all services
+glance-control all start
+
+# Output
+tail -n0 -F /var/log/glance-*.log
