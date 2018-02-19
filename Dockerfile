@@ -30,6 +30,7 @@ RUN apk add --no-cache --virtual build-deps \
     && pip install /opt/python-openstackclient -r /opt/python-openstackclient/requirements.txt -r /opt/requirements/requirements.txt \
     && mkdir -p /etc/glance \
     && cp /opt/glance/etc/glance-*-paste.ini /etc/glance \
+    && cp /opt/glance/etc/schema-image.json /etc/glance \
     && rm -rf /root/.cache \
 #    && rm -rf /opt/* \
     && rm -rf /var/cache/apk/* \
